@@ -30,7 +30,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "https://devops-copilot-ivory.vercel.app",
-        "https://devops-copilot-2qp85ht1x-a-code1.vercel.app",
+        "https://devops-copilot-5vva7fj33-a-code1.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
