@@ -1,15 +1,15 @@
 {
   "current_state": {
-    "transit_api_version": "v3.7",
-    "transit_api_status": "healthy",
-    "error_rate": 1.8,
-    "latency_ms": 220,
-    "http_5xx_rate": 1.2,
+    "transit_api_version": "v3.8",
+    "transit_api_status": "degraded",
+    "error_rate": 42.3,
+    "latency_ms": 4200,
+    "http_5xx_rate": 38.7,
     "cache_status": "healthy",
-    "cache_connection_errors": false,
-    "arrival_data_freshness_seconds": 8,
-    "route_planner_status": "healthy",
-    "station_display_status": "healthy"
+    "cache_connection_errors": true,
+    "arrival_data_freshness_seconds": 420,
+    "route_planner_status": "degraded",
+    "station_display_status": "degraded"
   },
   "rollback_state": {
     "transit_api_version": "v3.7",

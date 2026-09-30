@@ -13,7 +13,7 @@ function RootCause({ data }) {
       <div className="diagnosis">
         <span className="eyebrow">LIKELY ROOT CAUSE</span>
 
-        <h4>{diagnosis.recommended_action.includes("v3.8") ? "Deployment v3.8" : "Unknown"}</h4>
+        <h4>{diagnosis.recommended_action}</h4>
 
         <p>{diagnosis.likely_root_cause}</p>
 

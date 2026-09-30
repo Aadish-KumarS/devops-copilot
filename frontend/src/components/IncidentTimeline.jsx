@@ -2,11 +2,24 @@ function IncidentTimeline({ data }) {
   const recovered = data.verification?.verified;
   const remediated = data.remediation?.executed;
 
+  const incident = data.incident;
+  const diagnosis = data.diagnosis;
+  const remediation = data.remediation;
+
+  const service = incident?.service || "service";
+
+  const remediationText = remediation?.result?.from_version &&
+    remediation?.result?.to_version
+    ? `${remediation.result.from_version} → ${remediation.result.to_version}`
+    : remediation?.action === "restore_provider_connection"
+      ? "External provider connection restored."
+      : "Remediation executed.";
+
   return (
     <div className="panel">
       <div className="panel-header">
         <h3>Incident Timeline</h3>
-        <span>{data.incident.id}</span>
+        <span>{incident.id}</span>
       </div>
 
       <div className="timeline">
@@ -14,9 +27,7 @@ function IncidentTimeline({ data }) {
           <div className="timeline-marker">✓</div>
           <div>
             <strong>Incident detected</strong>
-            <p>
-              Transit API returned elevated 500/503 errors.
-            </p>
+            <p>{incident.alert}</p>
           </div>
         </div>
 
@@ -25,7 +36,8 @@ function IncidentTimeline({ data }) {
           <div>
             <strong>Evidence collected</strong>
             <p>
-              Logs, health, deployments, configuration and history analyzed.
+              Health, logs, deployments, configuration and incident history
+              analyzed for {service}.
             </p>
           </div>
         </div>
@@ -34,9 +46,7 @@ function IncidentTimeline({ data }) {
           <div className="timeline-marker">✓</div>
           <div>
             <strong>Root cause identified</strong>
-            <p>
-              Deployment v3.8 introduced problematic cache configuration.
-            </p>
+            <p>{diagnosis.likely_root_cause}</p>
           </div>
         </div>
 
@@ -45,7 +55,7 @@ function IncidentTimeline({ data }) {
           <div>
             <strong>Human approval granted</strong>
             <p>
-              High-risk rollback approved by operator.
+              High-risk remediation approved by operator.
             </p>
           </div>
         </div>
@@ -54,14 +64,18 @@ function IncidentTimeline({ data }) {
           <div className="timeline-marker">
             {remediated ? "✓" : "!"}
           </div>
+
           <div>
             <strong>
-              {remediated ? "Remediation executed" : "Waiting for remediation"}
+              {remediated
+                ? "Remediation executed"
+                : "Waiting for remediation"}
             </strong>
+
             <p>
               {remediated
-                ? "Transit API rolled back from v3.8 to v3.7."
-                : "Rollback is awaiting approval."}
+                ? remediationText
+                : "Remediation is awaiting approval."}
             </p>
           </div>
         </div>
@@ -70,13 +84,17 @@ function IncidentTimeline({ data }) {
           <div className="timeline-marker">
             {recovered ? "✓" : "!"}
           </div>
+
           <div>
             <strong>
-              {recovered ? "Recovery verified" : "Recovery verification"}
+              {recovered
+                ? "Recovery verified"
+                : "Recovery verification"}
             </strong>
+
             <p>
               {recovered
-                ? "Service health returned to normal."
+                ? `${service} health returned to normal and recovery was verified.`
                 : "Service recovery will be verified after remediation."}
             </p>
           </div>

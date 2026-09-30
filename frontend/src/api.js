@@ -1,17 +1,13 @@
 const API_URL = import.meta.env.VITE_API_URL;
 
-export async function investigateIncident() {
+export async function investigateIncident(scenario) {
   const response = await fetch(`${API_URL}/api/incidents/investigate`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      id: "INC-TRANSIT-001",
-      service: "transit-api",
-      severity: "high",
-      alert: "Transit API returning elevated 500/503 errors",
-      impact: "Live arrival information is becoming stale"
+      scenario
     })
   });
 
@@ -22,7 +18,12 @@ export async function investigateIncident() {
   return response.json();
 }
 
-export async function remediateIncident(diagnosis, approved) {
+export async function remediateIncident(
+  diagnosis,
+  approved,
+  scenario,
+  incident
+) {
   const response = await fetch(`${API_URL}/api/incidents/remediate`, {
     method: "POST",
     headers: {
@@ -30,7 +31,9 @@ export async function remediateIncident(diagnosis, approved) {
     },
     body: JSON.stringify({
       diagnosis,
-      approved
+      approved,
+      scenario,
+      incident
     })
   });
 
@@ -41,14 +44,20 @@ export async function remediateIncident(diagnosis, approved) {
   return response.json();
 }
 
-export async function verifyIncident(service = "transit-api") {
+export async function verifyIncident(
+  service = "transit-api",
+  scenario,
+  incident
+) {
   const response = await fetch(`${API_URL}/api/incidents/verify`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      service
+      service,
+      scenario,
+      incident
     })
   });
 
@@ -76,6 +85,30 @@ export async function getCurrentIncident() {
 
   if (!response.ok) {
     throw new Error("Failed to load current incident state");
+  }
+
+  return response.json();
+}
+export async function getScenarios() {
+  const response = await fetch(`${API_URL}/api/scenarios`);
+
+  if (!response.ok) {
+    throw new Error("Failed to load scenarios");
+  }
+
+  return response.json();
+}
+
+export async function selectScenario(scenarioName) {
+  const response = await fetch(
+    `${API_URL}/api/scenarios/${scenarioName}`,
+    {
+      method: "POST"
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to select scenario");
   }
 
   return response.json();

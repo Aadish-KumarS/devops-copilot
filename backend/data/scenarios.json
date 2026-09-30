@@ -1,0 +1,23 @@
+{
+  "cache_failure": {
+    "name": "Cache Configuration Regression",
+    "service": "transit-api",
+    "severity": "high",
+    "message": "Transit API is returning elevated 500/503 errors",
+    "impact": "Live transit information is becoming stale for commuters."
+  },
+  "database_failure": {
+    "name": "Database Connection Exhaustion",
+    "service": "route-planner",
+    "severity": "critical",
+    "message": "Route planner is experiencing database connection failures",
+    "impact": "Route planning requests are failing for passengers."
+  },
+  "external_api_failure": {
+    "name": "External Provider Degradation",
+    "service": "station-display",
+    "severity": "high",
+    "message": "Station display service is receiving failures from an external provider",
+    "impact": "Station displays are showing stale arrival information."
+  }
+}

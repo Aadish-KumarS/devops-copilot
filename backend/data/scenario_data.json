@@ -1,0 +1,75 @@
+{
+  "cache_failure": {
+    "service_health": {
+      "status": "unhealthy",
+      "error_rate": 42.3,
+      "latency_ms": 4200,
+      "http_5xx_rate": 38.7,
+      "arrival_data_freshness_seconds": 420
+    },
+    "logs": [
+      "Cache connection timeout after 100ms",
+      "Failed to retrieve cached transit data",
+      "HTTP 503 returned by transit-api",
+      "HTTP 500 returned by transit-api"
+    ],
+    "deployment": {
+      "version": "v3.8",
+      "previous_version": "v3.7",
+      "change": "Updated cache configuration and connection pool settings"
+    },
+    "config_changes": [
+      "CACHE_CONNECTION_POOL changed from 20 to 5",
+      "CACHE_TIMEOUT_MS changed from 500 to 100"
+    ]
+  },
+
+  "database_failure": {
+    "service_health": {
+      "status": "unhealthy",
+      "error_rate": 61.8,
+      "latency_ms": 6800,
+      "http_5xx_rate": 54.2,
+      "arrival_data_freshness_seconds": 510
+    },
+    "logs": [
+      "Database connection pool exhausted",
+      "Unable to acquire database connection",
+      "Database connection timeout after 3000ms",
+      "HTTP 503 returned by route-planner"
+    ],
+    "deployment": {
+      "version": "v4.2",
+      "previous_version": "v4.1",
+      "change": "Updated database connection pool configuration"
+    },
+    "config_changes": [
+      "DB_POOL_SIZE changed from 50 to 10",
+      "DB_CONNECTION_TIMEOUT_MS changed from 5000 to 3000"
+    ]
+  },
+
+  "external_api_failure": {
+    "service_health": {
+      "status": "degraded",
+      "error_rate": 29.4,
+      "latency_ms": 3900,
+      "http_5xx_rate": 24.1,
+      "arrival_data_freshness_seconds": 360
+    },
+    "logs": [
+      "External provider request timeout",
+      "External provider returned HTTP 503",
+      "Retry limit exceeded",
+      "Station display data unavailable"
+    ],
+    "deployment": {
+      "version": "v5.1",
+      "previous_version": "v5.0",
+      "change": "No relevant application configuration changes"
+    },
+    "config_changes": [
+      "No relevant configuration changes detected"
+    ]
+  }
+}

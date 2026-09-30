@@ -1,11 +1,11 @@
 def assess_risk(diagnosis):
-    action = diagnosis["recommended_action"].lower()
+    action = diagnosis.get("recommended_action", "").lower()
 
-    if "rollback" in action:
+    if "rollback" in action or "restore" in action:
         return {
             "risk_level": "high",
             "requires_approval": True,
-            "reason": "Rollback changes the active production deployment."
+            "reason": "The action modifies production state and requires human approval."
         }
 
     return {

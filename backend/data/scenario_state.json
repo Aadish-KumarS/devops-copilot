@@ -1,0 +1,26 @@
+{
+  "cache_failure": {
+    "status": "degraded",
+    "error_rate": 42.3,
+    "latency_ms": 4200,
+    "http_5xx_rate": 38.7,
+    "arrival_data_freshness_seconds": 420,
+    "recovered": false
+  },
+  "database_failure": {
+    "status": "healthy",
+    "error_rate": 1.4,
+    "latency_ms": 240,
+    "http_5xx_rate": 1.1,
+    "arrival_data_freshness_seconds": 9,
+    "recovered": true
+  },
+  "external_api_failure": {
+    "status": "degraded",
+    "error_rate": 29.4,
+    "latency_ms": 3900,
+    "http_5xx_rate": 24.1,
+    "arrival_data_freshness_seconds": 360,
+    "recovered": false
+  }
+}

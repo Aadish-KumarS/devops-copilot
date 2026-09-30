@@ -1,73 +1,122 @@
-function RecoveryMetrics({ data }) {
-  const verification = data.verification;
+import { useEffect, useState } from "react";
 
-  if (!verification?.verified) {
-    return null;
+function CountUp({ value, suffix = "" }) {
+  const target = Number(value);
+  const decimals = (String(value).split(".")[1] || "").length;
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (
+      Number.isNaN(target) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setCurrent(target);
+      return undefined;
+    }
+
+    const duration = 900;
+    const start = performance.now();
+    let frame;
+
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCurrent(target * eased);
+
+      if (progress < 1) {
+        frame = requestAnimationFrame(tick);
+      }
+    };
+
+    frame = requestAnimationFrame(tick);
+
+    return () => cancelAnimationFrame(frame);
+  }, [target]);
+
+  if (Number.isNaN(target)) {
+    return <>{value}{suffix}</>;
   }
 
-  const before = data.evidence.service_health;
-  const after = verification.verification;
-
   return (
-    <section className="panel recovery-metrics">
-      <div className="panel-header">
-        <h3>Recovery Impact</h3>
-        <span>SYSTEM VERIFIED</span>
-      </div>
-
-      <div className="comparison-grid">
-        <div className="comparison-card">
-          <span>Error Rate</span>
-
-          <div className="comparison-values">
-            <strong>{before.error_rate}%</strong>
-            <span>→</span>
-            <strong>{after.error_rate}%</strong>
-          </div>
-
-          <small>Before → After</small>
-        </div>
-
-        <div className="comparison-card">
-          <span>Latency</span>
-
-          <div className="comparison-values">
-            <strong>{before.latency_ms} ms</strong>
-            <span>→</span>
-            <strong>{after.latency_ms} ms</strong>
-          </div>
-
-          <small>Before → After</small>
-        </div>
-
-        <div className="comparison-card">
-          <span>HTTP 5xx</span>
-
-          <div className="comparison-values">
-            <strong>{before.http_5xx_rate}%</strong>
-            <span>→</span>
-            <strong>{after.http_5xx_rate}%</strong>
-          </div>
-
-          <small>Before → After</small>
-        </div>
-
-        <div className="comparison-card">
-          <span>Data Freshness</span>
-
-          <div className="comparison-values">
-            <strong>
-              {Math.round(data.evidence.system_state.arrival_data_freshness_seconds / 60)} min
-            </strong>
-            <span>→</span>
-            <strong>{after.arrival_data_freshness_seconds}s</strong>
-          </div>
-
-          <small>Before → After</small>
-        </div>
-      </div>
-    </section>
+    <>
+      {current.toFixed(decimals)}
+      {suffix}
+    </>
   );
 }
 
-export default RecoveryMetrics;
+function ServiceStatus({ data }) {
+  const health = data.evidence.service_health;
+
+  const incident = data.incident;
+
+  const serviceNames = {
+    "transit-api": "Transit API",
+    "route-planner": "Route Planner",
+    "station-display": "Station Display"
+  };
+
+  const serviceDescriptions = {
+    "transit-api": "Live transit information service is experiencing elevated failures.",
+    "route-planner": "Route planning service is experiencing database failures.",
+    "station-display": "Station display service is experiencing external provider failures."
+  };
+
+  const serviceName =
+    serviceNames[incident.service] || incident.service;
+
+  const description =
+    serviceDescriptions[incident.service] || incident.impact;
+
+  return (
+    <>
+      <section className="incident-header">
+        <div>
+          <span className="eyebrow">PRODUCTION INCIDENT</span>
+          <h2>{serviceName}</h2>
+          <p>{description}</p>
+        </div>
+
+        <div className={`severity ${incident.severity.toLowerCase()}`}>
+          <span>SEVERITY</span>
+          <strong>{incident.severity.toUpperCase()}</strong>
+        </div>
+      </section>
+
+      <section className="metrics">
+        <div className="metric-card">
+          <span>Error Rate</span>
+          <strong>
+            <CountUp value={health.error_rate} suffix="%" />
+          </strong>
+        </div>
+
+        <div className="metric-card">
+          <span>Latency</span>
+          <strong>
+            <CountUp value={health.latency_ms / 1000} suffix="s" />
+          </strong>
+        </div>
+
+        <div className="metric-card">
+          <span>HTTP 5xx</span>
+          <strong>
+            <CountUp value={health.http_5xx_rate} suffix="%" />
+          </strong>
+        </div>
+
+        <div className="metric-card">
+          <span>Data Freshness</span>
+          <strong>
+            <CountUp
+              value={Math.round(health.arrival_data_freshness_seconds / 60)}
+              suffix=" min"
+            />
+          </strong>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export default ServiceStatus;

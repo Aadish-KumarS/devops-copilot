@@ -1,13 +1,27 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from agent.investigation_engine import investigate_incident
 from agent.rca_engine import analyze_root_cause
+from agent.orchestrator import investigate_incident
 from agent.risk_engine import assess_risk
 from agent.remediation import execute_remediation
-from tools.incident_tools import reset_incident
 from agent.llm_engine import generate_incident_analysis
 from agent.verification import verify_remediation
-from tools.incident_tools import get_system_state
+from agent.audit_logger import build_audit_trail
+from tools.scenario_manager import (
+    list_scenarios,
+    set_active_scenario,
+    get_active_scenario,
+    get_scenario
+)
+from tools.incident_tools import (
+    get_system_state,
+    get_service_health,
+    get_logs,
+    get_recent_deployments,
+    get_config_changes,
+    reset_incident,
+    search_incident_history
+)
 
 app = FastAPI(title="DevOps Copilot")
 
@@ -32,12 +46,40 @@ def root():
 
 
 @app.post("/api/incidents/investigate")
-def investigate(incident: dict):
-    evidence_result = investigate_incident(incident)
+def investigate(request: dict):
+    scenario_name = request.get("scenario", get_active_scenario())
 
-    diagnosis = analyze_root_cause(
-        evidence_result["evidence"]
-    )
+    incident_data = get_scenario(scenario_name)
+
+    if not incident_data:
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid incident scenario"
+        )
+
+    set_active_scenario(scenario_name)
+
+    incident = {
+        "id": f"INC-{scenario_name.upper()}",
+        "service": incident_data["service"],
+        "severity": incident_data["severity"],
+        "alert": incident_data["message"],
+        "impact": incident_data["impact"]
+    }
+
+    agent_result = investigate_incident(incident)
+
+    diagnosis = agent_result["diagnosis"]
+    investigation_trace = agent_result["investigation_trace"]
+
+    evidence = {
+        "service_health": get_service_health(incident["service"]),
+        "logs": get_logs(incident["service"]),
+        "deployments": get_recent_deployments(incident["service"]),
+        "config_changes": get_config_changes(incident["service"]),
+        "incident_history": search_incident_history(incident["service"]),
+        "system_state": get_system_state()
+    }
 
     risk = assess_risk(diagnosis)
 
@@ -45,7 +87,7 @@ def investigate(incident: dict):
 
     try:
         llm_analysis = generate_incident_analysis(
-            evidence_result["evidence"],
+            evidence,
             diagnosis,
             risk
         )
@@ -54,27 +96,32 @@ def investigate(incident: dict):
 
     return {
         "incident": incident,
-        "evidence": evidence_result["evidence"],
+        "evidence": evidence,
         "diagnosis": diagnosis,
         "risk": risk,
-        "llm_analysis": llm_analysis
+        "llm_analysis": llm_analysis,
+        "investigation_trace": investigation_trace
     }
 
 @app.post("/api/incidents/remediate")
 def remediate(request: dict):
     diagnosis = request["diagnosis"]
     approved = request.get("approved", False)
+    scenario = request.get("scenario")
+    incident = request.get("incident")
 
-    return execute_remediation(
+    if scenario:
+        set_active_scenario(scenario)
+
+    remediation = execute_remediation(
         diagnosis,
         approved=approved
     )
 
-@app.post("/api/incidents/verify")
-def verify(request: dict):
-    service = request.get("service", "transit-api")
-
-    return verify_remediation(service) 
+    return {
+        "remediation": remediation,
+        "incident": incident
+    }
 
 @app.post("/api/incidents/reset")
 def reset():
@@ -91,4 +138,54 @@ def current_incident():
             "impact": "Live arrival information is becoming stale"
         },
         "state": get_system_state()
+    }
+
+@app.get("/api/scenarios")
+def scenarios():
+    return {
+        "scenarios": list_scenarios(),
+        "active": get_active_scenario()
+    }
+
+
+@app.post("/api/scenarios/{scenario_name}")
+def select_scenario(scenario_name: str):
+    scenario = set_active_scenario(scenario_name)
+
+    return {
+        "active": scenario_name,
+        "scenario": scenario
+    }
+
+@app.post("/api/incidents/verify")
+def verify(request: dict):
+    service = request.get("service", "transit-api")
+    scenario = request.get("scenario")
+    incident_data = request.get("incident")
+
+    if scenario:
+        set_active_scenario(scenario)
+
+    verification = verify_remediation(service)
+
+    if not incident_data:
+        return verification
+
+    remediation = incident_data.get("remediation", {})
+
+    if "remediation" in remediation:
+        remediation = remediation["remediation"]
+
+    audit_trail = build_audit_trail(
+        incident=incident_data["incident"],
+        diagnosis=incident_data["diagnosis"],
+        risk=incident_data["risk"],
+        investigation_trace=incident_data["investigation_trace"],
+        remediation=remediation,
+        verification=verification
+    )
+
+    return {
+        **verification,
+        "audit_trail": audit_trail
     }
