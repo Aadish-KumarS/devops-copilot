@@ -1,0 +1,46 @@
+{
+  "logs": [
+    {
+      "timestamp": "2026-09-30T10:02:00Z",
+      "service": "transit-api",
+      "level": "INFO",
+      "message": "Deployment v3.8 completed successfully"
+    },
+    {
+      "timestamp": "2026-09-30T10:03:12Z",
+      "service": "transit-api",
+      "level": "WARN",
+      "message": "Cache connection pool nearing capacity"
+    },
+    {
+      "timestamp": "2026-09-30T10:04:08Z",
+      "service": "transit-api",
+      "level": "ERROR",
+      "message": "Cache connection timeout after 100ms"
+    },
+    {
+      "timestamp": "2026-09-30T10:04:21Z",
+      "service": "transit-api",
+      "level": "ERROR",
+      "message": "Failed to retrieve live transit data from cache"
+    },
+    {
+      "timestamp": "2026-09-30T10:05:03Z",
+      "service": "transit-api",
+      "level": "ERROR",
+      "message": "HTTP 503 returned for /api/arrival-times"
+    },
+    {
+      "timestamp": "2026-09-30T10:06:14Z",
+      "service": "transit-api",
+      "level": "ERROR",
+      "message": "HTTP 500 returned for /api/route-status"
+    },
+    {
+      "timestamp": "2026-09-30T10:06:48Z",
+      "service": "transit-api",
+      "level": "WARN",
+      "message": "Live arrival data freshness exceeded 5 minutes"
+    }
+  ]
+}

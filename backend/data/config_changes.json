@@ -1,0 +1,24 @@
+{
+  "changes": [
+    {
+      "id": "cfg-118",
+      "service": "transit-api",
+      "deployment": "v3.8",
+      "changed_at": "2026-09-30T10:02:00Z",
+      "parameter": "CACHE_CONNECTION_POOL",
+      "previous_value": "20",
+      "new_value": "5",
+      "description": "Reduced cache connection pool size"
+    },
+    {
+      "id": "cfg-119",
+      "service": "transit-api",
+      "deployment": "v3.8",
+      "changed_at": "2026-09-30T10:02:00Z",
+      "parameter": "CACHE_TIMEOUT_MS",
+      "previous_value": "500",
+      "new_value": "100",
+      "description": "Reduced cache connection timeout"
+    }
+  ]
+}

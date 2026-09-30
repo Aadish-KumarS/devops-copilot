@@ -1,0 +1,25 @@
+{
+  "deployments": [
+    {
+      "id": "dep-038",
+      "service": "transit-api",
+      "version": "v3.8",
+      "deployed_at": "2026-09-30T10:02:00Z",
+      "status": "active",
+      "changes": [
+        "Updated cache configuration",
+        "Changed cache connection pool settings"
+      ]
+    },
+    {
+      "id": "dep-037",
+      "service": "transit-api",
+      "version": "v3.7",
+      "deployed_at": "2026-09-27T08:30:00Z",
+      "status": "previous",
+      "changes": [
+        "Minor API performance improvements"
+      ]
+    }
+  ]
+}

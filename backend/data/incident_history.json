@@ -1,0 +1,29 @@
+{
+  "incidents": [
+    {
+      "id": "INC-021",
+      "date": "2026-08-14",
+      "service": "transit-api",
+      "symptoms": [
+        "HTTP 503 errors",
+        "High API latency",
+        "Stale arrival information"
+      ],
+      "root_cause": "Incorrect cache connection configuration",
+      "resolution": "Rollback deployment",
+      "deployment": "v3.4"
+    },
+    {
+      "id": "INC-017",
+      "date": "2026-07-22",
+      "service": "route-planner",
+      "symptoms": [
+        "High latency",
+        "Route requests timing out"
+      ],
+      "root_cause": "External routing provider latency",
+      "resolution": "Provider recovered",
+      "deployment": null
+    }
+  ]
+}

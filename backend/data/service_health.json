@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-09-30T10:07:00Z",
+  "services": [
+    {
+      "name": "transit-api",
+      "status": "degraded",
+      "health": "unhealthy",
+      "error_rate": 42.3,
+      "latency_ms": 4200,
+      "http_5xx_rate": 38.7
+    },
+    {
+      "name": "cache-service",
+      "status": "healthy",
+      "health": "healthy",
+      "error_rate": 0.4,
+      "latency_ms": 18,
+      "connection_success_rate": 99.6
+    },
+    {
+      "name": "route-planner",
+      "status": "degraded",
+      "health": "degraded",
+      "error_rate": 12.1,
+      "latency_ms": 1800
+    },
+    {
+      "name": "station-display-service",
+      "status": "degraded",
+      "health": "degraded",
+      "error_rate": 8.4,
+      "latency_ms": 2100
+    }
+  ]
+}
