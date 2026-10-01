@@ -16,7 +16,8 @@ def build_audit_trail(
     risk,
     investigation_trace,
     remediation=None,
-    verification=None
+    verification=None,
+    approval=None
 ):
     events = []
 
@@ -67,6 +68,18 @@ def build_audit_trail(
             }
         )
     )
+
+    if approval:
+        events.append(
+            create_audit_event(
+                "human_approval_recorded",
+                "A human operator approved the production-changing action.",
+                {
+                    "operator": approval.get("operator", "Unknown operator"),
+                    "reason": approval.get("reason", "No reason recorded")
+                }
+            )
+        )
 
     if remediation:
         events.append(
