@@ -12,6 +12,7 @@ from agent.llm_engine import generate_incident_analysis
 from agent.verification import verify_remediation
 from agent import incident_store
 from agent.product_context import DEPENDENCY_GRAPHS, RUNBOOKS, notification_targets
+from agent.github_adapter import GitHubAdapterError, latest_commits
 from tools.scenario_manager import (
     list_scenarios,
     set_active_scenario,
@@ -107,9 +108,11 @@ app.add_middleware(
         "http://localhost:5173",
         "http://localhost:5174",
         "http://localhost:5175",
+        "http://localhost:5176",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:5174",
         "http://127.0.0.1:5175",
+        "http://127.0.0.1:5176",
         "https://devops-copilot-ivory.vercel.app",
         "https://devops-copilot-5vva7fj33-a-code1.vercel.app",
         "https://devops-copilot-96d7f6pno-a-code1.vercel.app",
@@ -295,6 +298,16 @@ def current_incident():
         },
         "state": get_system_state()
     }
+
+
+@app.get("/api/integrations/github/commits")
+def github_commits(repository: str, http_request: Request):
+    """Read recent GitHub commits without granting the copilot write access."""
+    enforce_rate_limit(http_request, "github_commits", limit=20)
+    try:
+        return latest_commits(repository)
+    except GitHubAdapterError as error:
+        raise HTTPException(status_code=422, detail=str(error)) from error
 
 
 @app.get("/api/incidents")

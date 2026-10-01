@@ -34,6 +34,7 @@ import ResponseCockpit from "./components/ResponseCockpit";
 import EvidenceMap from "./components/EvidenceMap";
 import ExportBrief from "./components/ExportBrief";
 import InvestigationLoading from "./components/InvestigationLoading";
+import GitHubLivePanel from "./components/GitHubLivePanel";
 
 function App() {
   const [monitoring, setMonitoring] = useState(null);
@@ -366,6 +367,8 @@ function App() {
         <ResponseCockpit data={incident} />
 
         <EvidenceMap data={incident} />
+
+        <GitHubLivePanel />
 
         <AgentActivity
           trace={incident.investigation_trace}

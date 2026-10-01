@@ -135,3 +135,10 @@ export async function getIncidents(search = "") {
   if (!response.ok) throw new Error("Failed to load incident records");
   return response.json();
 }
+
+export async function getGitHubCommits(repository) {
+  const response = await fetch(`${API_URL}/api/integrations/github/commits?repository=${encodeURIComponent(repository)}`);
+  const body = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(body.detail || "Failed to load live GitHub commits");
+  return body;
+}

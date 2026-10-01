@@ -34,6 +34,15 @@ Open the product and select **Launch the 90-sec demo**. The guided path uses a d
 - **CORS:** the API accepts local development origins and Vercel preview origins matching this project's deployment naming pattern. Add your exact custom-domain origin to `backend/main.py` if you introduce one.
 - **AI fallback:** a missing Gemini key does not break the judge demo; the API returns a deterministic, evidence-based fallback diagnosis. Add `GEMINI_API_KEY` to Render to enable the Gemini investigation path.
 
+### Live GitHub change intelligence
+
+The console includes a **Live Change Intelligence** panel. Enter any public `owner/repository` identifier and it will retrieve the latest commits from GitHub's read-only REST API—real change evidence, not simulated data.
+
+- Public repositories work without credentials.
+- For private repositories or higher API limits, set `GITHUB_TOKEN` **only in the backend environment**. Use a fine-grained, read-only token with access limited to the intended repository; never put it in `VITE_*` variables.
+- The adapter validates repository input, limits requests, uses a verified TLS bundle, and only performs read operations. It cannot create commits, deployments, issues, or other changes.
+- See [`backend/.env.example`](backend/.env.example) and [`frontend/.env.example`](frontend/.env.example) for configuration.
+
 ## 🚨 Problem
 
 Production incidents require engineers to quickly investigate logs, service health, deployments, configuration changes, and previous incidents.
