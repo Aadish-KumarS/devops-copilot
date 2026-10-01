@@ -1,0 +1,271 @@
+{"kind":"deck","id":"pr/hfn07l","name":"Deck"}
+{"kind":"layout","layoutId":"10e654a3-a152-421b-8d42-a717a6849860","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"69142f26-4c6f-48df-9b43-54b96217a66e","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/cm1zka","slide":1,"title":"DEVOPS COPILOT","textShapes":5}
+{"kind":"shape","id":"sh/b6pofqto","slide":1,"bbox":[0,0,11,720]}
+{"kind":"textbox","id":"sh/w7ypova9","slide":1,"text":"DEVOPS COPILOT","textPreview":"DEVOPS COPILOT","textChars":14,"textLines":1,"bbox":[76,82,520,34]}
+{"kind":"textbox","id":"sh/x8r6h0bu","slide":1,"text":"Evidence-led incident response\nwith a human approval gate","textPreview":"Evidence-led incident response | with a human approval gate","textChars":57,"textLines":2,"bbox":[76,132,600,150]}
+{"kind":"textbox","id":"sh/it07q5sf","slide":1,"text":"Investigate the signal, control the risk, verify the recovery.","textPreview":"Investigate the signal, control the risk, verify the recovery.","textChars":62,"textLines":1,"bbox":[76,306,520,42]}
+{"kind":"textbox","id":"sh/ju9ojqt0","slide":1,"text":"Autonomous incident response  |  Hackathon 2026","textPreview":"Autonomous incident response  |  Hackathon 2026","textChars":47,"textLines":1,"bbox":[76,570,420,22]}
+{"kind":"textbox","id":"sh/5wrql0b6","slide":1,"text":"LIVE PRODUCT INTERFACE","textPreview":"LIVE PRODUCT INTERFACE","textChars":22,"textLines":1,"bbox":[700,572,300,16]}
+{"kind":"image","id":"im/xwfmlwfe","slide":1,"name":"","geometry":"roundRect","alt":"DevOps Copilot product interface","bbox":[700,106,500,450]}
+{"kind":"notes","id":"nt/cm1zka","slide":1,"text":"Say: DevOps Copilot helps an operator move from a production alert to a verified recovery. The important point is control: AI investigates, but people still authorize production changes.\n\nVisual: Actual product screenshot, captured from the project UI.\n\nLayout: Minimal cover. Title on the left, live product on the right."}
+{"kind":"slide","id":"sl/xb4xp8","slide":2,"title":"02","textShapes":14}
+{"kind":"shape","id":"sh/s7y98zqh","slide":2,"bbox":[0,0,11,720]}
+{"kind":"textbox","id":"sh/76p8zupc","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[72,42,80,24]}
+{"kind":"textbox","id":"sh/65gr6p8r","slide":2,"text":"The incident-response problem","textPreview":"The incident-response problem","textChars":29,"textLines":1,"bbox":[72,72,920,54]}
+{"kind":"textbox","id":"sh/547qxk76","slide":2,"text":"Production incidents demand decisions before teams have a coherent picture.","textPreview":"Production incidents demand decisions before teams have a coherent picture.","textChars":75,"textLines":1,"bbox":[72,132,930,30]}
+{"kind":"textbox","id":"sh/k3y94fql","slide":2,"text":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textPreview":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textChars":41,"textLines":1,"bbox":[72,684,430,18]}
+{"kind":"textbox","id":"sh/j2p8vup0","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,684,48,18]}
+{"kind":"shape","id":"sh/y1gr2p8f","slide":2,"bbox":[86,210,148,42]}
+{"kind":"textbox","id":"sh/x0nqtk7u","slide":2,"text":"Health","textPreview":"Health","textChars":6,"textLines":1,"bbox":[104,222,112,18]}
+{"kind":"shape","id":"sh/wfe90fqp","slide":2,"bbox":[86,274,148,42]}
+{"kind":"textbox","id":"sh/upova5g3","slide":2,"text":"Logs","textPreview":"Logs","textChars":4,"textLines":1,"bbox":[104,286,112,18]}
+{"kind":"shape","id":"sh/vqhcjaxo","slide":2,"bbox":[86,338,148,42]}
+{"kind":"textbox","id":"sh/wrqdcfy9","slide":2,"text":"Deploys","textPreview":"Deploys","textChars":7,"textLines":1,"bbox":[104,350,112,18]}
+{"kind":"shape","id":"sh/hszelkfu","slide":2,"bbox":[86,402,148,42]}
+{"kind":"textbox","id":"sh/m1ov65g7","slide":2,"text":"Config","textPreview":"Config","textChars":6,"textLines":1,"bbox":[104,414,112,18]}
+{"kind":"shape","id":"sh/72xcfqxc","slide":2,"bbox":[86,466,148,42]}
+{"kind":"textbox","id":"sh/836d8vyx","slide":2,"text":"History","textPreview":"History","textChars":7,"textLines":1,"bbox":[104,478,112,18]}
+{"kind":"shape","id":"sh/94fuh0fi","slide":2,"bbox":[235,231,135,2]}
+{"kind":"shape","id":"sh/yx4v2lgv","slide":2,"bbox":[235,295,135,2]}
+{"kind":"shape","id":"sh/zydcbqxg","slide":2,"bbox":[235,359,135,2]}
+{"kind":"shape","id":"sh/n2tsjmd8","slide":2,"bbox":[235,423,135,2]}
+{"kind":"shape","id":"sh/21krahwn","slide":2,"bbox":[235,487,135,2]}
+{"kind":"shape","id":"sh/p4balwve","slide":2,"bbox":[370,246,270,176]}
+{"kind":"textbox","id":"sh/o329cret","slide":2,"text":"Fragmented evidence","textPreview":"Fragmented evidence","textChars":19,"textLines":1,"bbox":[405,280,200,30]}
+{"kind":"textbox","id":"sh/b6tsn6d4","slide":2,"text":"Different tools tell partial stories.\nOperators must correlate them under pressure.","textPreview":"Different tools tell partial stories. | Operators must correlate them under pressure.","textChars":83,"textLines":2,"bbox":[410,330,190,60]}
+{"kind":"shape","id":"sh/a5kbe1wz","slide":2,"bbox":[640,334,120,2]}
+{"kind":"shape","id":"sh/x8vapwva","slide":2,"bbox":[760,246,360,176]}
+{"kind":"textbox","id":"sh/c7mtgrep","slide":2,"text":"Risky decision window","textPreview":"Risky decision window","textChars":21,"textLines":1,"bbox":[800,280,280,30]}
+{"kind":"textbox","id":"sh/ra9sb2d0","slide":2,"text":"A fast remediation can reduce impact.\nAn unsafe remediation can deepen it.","textPreview":"A fast remediation can reduce impact. | An unsafe remediation can deepen it.","textChars":74,"textLines":2,"bbox":[810,330,260,56]}
+{"kind":"notes","id":"nt/xb4xp8","slide":2,"text":"Say: During an incident, the team has health data, logs, deployment history and configuration changes, but no shared evidence trail. The next decision can change production, so speed alone is not enough.\n\nVisual: Signal sources converge into a fragmented-evidence problem and a risky-decision window.\n\nLayout: Left-to-right flow. Keep the attention on the tension between urgency and safety."}
+{"kind":"slide","id":"sl/sv7d65","slide":3,"title":"03","textShapes":12}
+{"kind":"shape","id":"sh/fq9gfip8","slide":3,"bbox":[0,0,11,720]}
+{"kind":"textbox","id":"sh/grixon6t","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[72,42,80,24]}
+{"kind":"textbox","id":"sh/1sryh87e","slide":3,"text":"Where existing approaches fall short","textPreview":"Where existing approaches fall short","textChars":36,"textLines":1,"bbox":[72,72,920,54]}
+{"kind":"textbox","id":"sh/2t0fqdoz","slide":3,"text":"Alerting platforms, ticket workflows, and generic AI assistants each solve only part of the response loop.","textPreview":"Alerting platforms, ticket workflows, and generic AI assistants each solve only part of the response loop.","textChars":106,"textLines":1,"bbox":[72,132,930,30]}
+{"kind":"textbox","id":"sh/3u9gjip4","slide":3,"text":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textPreview":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textChars":41,"textLines":1,"bbox":[72,684,430,18]}
+{"kind":"textbox","id":"sh/ov2hsn6p","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,684,48,18]}
+{"kind":"shape","id":"sh/pwbyls7a","slide":3,"bbox":[90,230,300,260]}
+{"kind":"textbox","id":"sh/qxkzuxov","slide":3,"text":"Alerting & dashboards","textPreview":"Alerting & dashboards","textChars":21,"textLines":1,"bbox":[114,258,250,32]}
+{"kind":"shape","id":"sh/bytgn25g","slide":3,"bbox":[114,308,246,2]}
+{"kind":"textbox","id":"sh/7idk3adk","slide":3,"text":"Detect symptoms\nSurface metrics\nHand investigation to people","textPreview":"Detect symptoms | Surface metrics | Hand investigation to people","textChars":60,"textLines":3,"bbox":[114,336,242,104]}
+{"kind":"shape","id":"sh/mh43upcz","slide":3,"bbox":[460,230,300,260]}
+{"kind":"textbox","id":"sh/tkf25kvq","slide":3,"text":"Runbooks & tickets","textPreview":"Runbooks & tickets","textChars":18,"textLines":1,"bbox":[484,258,250,32]}
+{"kind":"shape","id":"sh/8j6lwfu5","slide":3,"bbox":[484,308,246,2]}
+{"kind":"textbox","id":"sh/zedkzado","slide":3,"text":"Standardize process\nPreserve history\nRely on manual correlation","textPreview":"Standardize process | Preserve history | Rely on manual correlation","textChars":63,"textLines":3,"bbox":[484,336,242,104]}
+{"kind":"shape","id":"sh/yd4jq5c3","slide":3,"bbox":[830,230,300,260]}
+{"kind":"textbox","id":"sh/lgv21kve","slide":3,"text":"Generic AI assistants","textPreview":"Generic AI assistants","textChars":21,"textLines":1,"bbox":[854,258,250,32]}
+{"kind":"shape","id":"sh/kfm1sfu9","slide":3,"bbox":[854,308,246,2]}
+{"kind":"textbox","id":"sh/3axkbeds","slide":3,"text":"Summarize evidence\nSuggest next steps\nLack an authorization boundary","textPreview":"Summarize evidence | Suggest next steps | Lack an authorization boundary","textChars":68,"textLines":3,"bbox":[854,336,242,104]}
+{"kind":"textbox","id":"sh/i9o329c7","slide":3,"text":"Missing layer: one evidence trail that connects diagnosis, risk policy, human approval, remediation, and proof of recovery.","textPreview":"Missing layer: one evidence trail that connects diagnosis, risk policy, human approval, remediation, and proof of recovery.","textChars":123,"textLines":1,"bbox":[116,548,1048,40]}
+{"kind":"notes","id":"nt/sv7d65","slide":3,"text":"Say: The issue is not a lack of tools. It is that the tools are disconnected. Alerting detects, runbooks guide, and AI can summarize, but the operating team still has to create the trusted chain of evidence and approval.\n\nVisual: Three-column comparison with one missing-layer statement.\n\nLayout: Use a calm comparison layout. The conclusion sits alone at the bottom."}
+{"kind":"slide","id":"sl/qniyt1","slide":4,"title":"04","textShapes":15}
+{"kind":"shape","id":"sh/g7uhcfi9","slide":4,"bbox":[0,0,11,720]}
+{"kind":"textbox","id":"sh/f6lg3ah4","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[72,42,80,24]}
+{"kind":"textbox","id":"sh/e5cza50j","slide":4,"text":"A controlled response loop","textPreview":"A controlled response loop","textChars":26,"textLines":1,"bbox":[72,72,920,54]}
+{"kind":"textbox","id":"sh/t43y10zy","slide":4,"text":"DevOps Copilot combines evidence collection with a deterministic approval boundary.","textPreview":"DevOps Copilot combines evidence collection with a deterministic approval boundary.","textChars":83,"textLines":1,"bbox":[72,132,930,30]}
+{"kind":"textbox","id":"sh/s3uh8vid","slide":4,"text":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textPreview":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textChars":41,"textLines":1,"bbox":[72,684,430,18]}
+{"kind":"textbox","id":"sh/r2lgzqhs","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,684,48,18]}
+{"kind":"shape","id":"sh/61cz6507","slide":4,"bbox":[105,240,270,210]}
+{"kind":"textbox","id":"sh/50jyx0zm","slide":4,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[131,266,36,20]}
+{"kind":"textbox","id":"sh/4zah4vih","slide":4,"text":"AI investigates","textPreview":"AI investigates","textChars":15,"textLines":1,"bbox":[131,306,210,30]}
+{"kind":"textbox","id":"sh/mhs76lw3","slide":4,"text":"Read-only tools collect and correlate evidence.","textPreview":"Read-only tools collect and correlate evidence.","textChars":47,"textLines":1,"bbox":[131,350,210,60]}
+{"kind":"shape","id":"sh/ni1ofqd8","slide":4,"bbox":[375,344,60,2]}
+{"kind":"shape","id":"sh/8jap8vet","slide":4,"bbox":[435,240,270,210]}
+{"kind":"textbox","id":"sh/9kj6hgve","slide":4,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[461,266,36,20]}
+{"kind":"textbox","id":"sh/yds721wr","slide":4,"text":"Policy evaluates","textPreview":"Policy evaluates","textChars":16,"textLines":1,"bbox":[461,306,210,30]}
+{"kind":"textbox","id":"sh/ze1ob6dc","slide":4,"text":"Confidence and risk gates decide whether action is eligible.","textPreview":"Confidence and risk gates decide whether action is eligible.","textChars":60,"textLines":1,"bbox":[461,350,210,60]}
+{"kind":"shape","id":"sh/0fap4bex","slide":4,"bbox":[705,344,60,2]}
+{"kind":"shape","id":"sh/lgj6dgvi","slide":4,"bbox":[765,240,270,210]}
+{"kind":"textbox","id":"sh/qp8ny1wv","slide":4,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[791,266,36,20]}
+{"kind":"textbox","id":"sh/bqho76xg","slide":4,"text":"People authorize","textPreview":"People authorize","textChars":16,"textLines":1,"bbox":[791,306,210,30]}
+{"kind":"textbox","id":"sh/fux4f2t8","slide":4,"text":"Qualified operators approve, reject, or follow a manual runbook.","textPreview":"Qualified operators approve, reject, or follow a manual runbook.","textChars":64,"textLines":1,"bbox":[791,350,210,60]}
+{"kind":"textbox","id":"sh/ut436xcn","slide":4,"text":"Verified recovery and an append-only audit record close the loop.","textPreview":"Verified recovery and an append-only audit record close the loop.","textChars":65,"textLines":1,"bbox":[170,530,900,34]}
+{"kind":"notes","id":"nt/qniyt1","slide":4,"text":"Say: Our solution separates responsibilities. The AI investigates with read-only tools. Policy checks confidence and risk. A qualified operator chooses whether to approve, reject, or use the manual runbook. The system then verifies recovery and preserves the record.\n\nVisual: Three editable responsibility blocks leading to the audit and verification outcome.\n\nLayout: Strong center composition. Highlight the policy and human gates as the differentiator."}
+{"kind":"slide","id":"sl/idh84s","slide":5,"title":"05","textShapes":23}
+{"kind":"shape","id":"sh/ut4jqlgr","slide":5,"bbox":[0,0,11,720]}
+{"kind":"textbox","id":"sh/hwfil0zi","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[72,42,80,24]}
+{"kind":"textbox","id":"sh/gv61svyx","slide":5,"text":"What the product delivers","textPreview":"What the product delivers","textChars":25,"textLines":1,"bbox":[72,72,920,54]}
+{"kind":"textbox","id":"sh/3yx0nah8","slide":5,"text":"The demo focuses on a complete response loop rather than a single AI summary.","textPreview":"The demo focuses on a complete response loop rather than a single AI summary.","textChars":77,"textLines":1,"bbox":[72,132,930,30]}
+{"kind":"textbox","id":"sh/ixoju5gn","slide":5,"text":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textPreview":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textChars":41,"textLines":1,"bbox":[72,684,430,18]}
+{"kind":"textbox","id":"sh/50fip0ze","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,684,48,18]}
+{"kind":"textbox","id":"sh/4z61wfyt","slide":5,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[94,205,42,20]}
+{"kind":"textbox","id":"sh/j2d0b6h4","slide":5,"text":"Evidence correlation","textPreview":"Evidence correlation","textChars":20,"textLines":1,"bbox":[152,203,260,26]}
+{"kind":"textbox","id":"sh/y1kzi10j","slide":5,"text":"Health, logs, deployment, config, history, state","textPreview":"Health, logs, deployment, config, history, state","textChars":48,"textLines":1,"bbox":[152,235,420,36]}
+{"kind":"shape","id":"sh/4fmh43qd","slide":5,"bbox":[152,287,430,1]}
+{"kind":"textbox","id":"sh/pgfid8ry","slide":5,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[654,205,42,20]}
+{"kind":"textbox","id":"sh/2d4z2t87","slide":5,"text":"Confidence gate","textPreview":"Confidence gate","textChars":15,"textLines":1,"bbox":[712,203,260,26]}
+{"kind":"textbox","id":"sh/3ed0by9s","slide":5,"text":"High-confidence evidence before production action","textPreview":"High-confidence evidence before production action","textChars":49,"textLines":1,"bbox":[712,235,420,36]}
+{"kind":"shape","id":"sh/c36h83q9","slide":5,"bbox":[712,287,430,1]}
+{"kind":"textbox","id":"sh/d4fih8ru","slide":5,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[94,323,42,20]}
+{"kind":"textbox","id":"sh/qhoz6t8j","slide":5,"text":"Approval controls","textPreview":"Approval controls","textChars":17,"textLines":1,"bbox":[152,321,260,26]}
+{"kind":"textbox","id":"sh/rix0fy9o","slide":5,"text":"Qualified roles, reason, approval history","textPreview":"Qualified roles, reason, approval history","textChars":41,"textLines":1,"bbox":[152,353,420,36]}
+{"kind":"shape","id":"sh/s72hwjq5","slide":5,"bbox":[152,405,430,1]}
+{"kind":"textbox","id":"sh/t8bi54rq","slide":5,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[654,323,42,20]}
+{"kind":"textbox","id":"sh/9s36dgf2","slide":5,"text":"Runbook context","textPreview":"Runbook context","textChars":15,"textLines":1,"bbox":[712,321,260,26]}
+{"kind":"textbox","id":"sh/8rupkbex","slide":5,"text":"Why this action and manual recovery steps","textPreview":"Why this action and manual recovery steps","textChars":41,"textLines":1,"bbox":[712,353,420,36]}
+{"kind":"shape","id":"sh/nq1ob6xc","slide":5,"bbox":[712,405,430,1]}
+{"kind":"textbox","id":"sh/mps7i1wr","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[94,441,42,20]}
+{"kind":"textbox","id":"sh/xw36hgfe","slide":5,"text":"Verified recovery","textPreview":"Verified recovery","textChars":17,"textLines":1,"bbox":[152,439,260,26]}
+{"kind":"textbox","id":"sh/wvupobet","slide":5,"text":"Metrics check after remediation","textPreview":"Metrics check after remediation","textChars":31,"textLines":1,"bbox":[152,471,420,36]}
+{"kind":"shape","id":"sh/vulof6x8","slide":5,"bbox":[152,523,430,1]}
+{"kind":"textbox","id":"sh/atc7mlwn","slide":5,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[654,441,42,20]}
+{"kind":"textbox","id":"sh/50n6l0fa","slide":5,"text":"Durable ledger","textPreview":"Durable ledger","textChars":14,"textLines":1,"bbox":[712,439,260,26]}
+{"kind":"textbox","id":"sh/kzepsvep","slide":5,"text":"Searchable incidents, notifications, audit events","textPreview":"Searchable incidents, notifications, audit events","textChars":49,"textLines":1,"bbox":[712,471,420,36]}
+{"kind":"shape","id":"sh/25o3mxc7","slide":5,"bbox":[712,523,430,1]}
+{"kind":"notes","id":"nt/idh84s","slide":5,"text":"Say: These are the product moments we want the judges to see: a complete evidence trail, a clear confidence gate, human approval controls, runbook explanation, verification, and a durable incident ledger.\n\nVisual: Six capability rows with short proof points.\n\nLayout: Use two balanced columns with generous whitespace."}
+{"kind":"slide","id":"sl/v0q4a9","slide":6,"title":"06","textShapes":23}
+{"kind":"shape","id":"sh/10raxg7u","slide":6,"bbox":[0,0,11,720]}
+{"kind":"textbox","id":"sh/ex0rm18j","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[72,42,80,24]}
+{"kind":"textbox","id":"sh/fy9sv6po","slide":6,"text":"Major incident response process","textPreview":"Major incident response process","textChars":31,"textLines":1,"bbox":[72,72,920,54]}
+{"kind":"textbox","id":"sh/on29svql","slide":6,"text":"A simple flow keeps the demo understandable in seconds.","textPreview":"A simple flow keeps the demo understandable in seconds.","textChars":55,"textLines":1,"bbox":[72,132,930,30]}
+{"kind":"textbox","id":"sh/poba1076","slide":6,"text":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textPreview":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textChars":41,"textLines":1,"bbox":[72,684,430,18]}
+{"kind":"textbox","id":"sh/210rql8f","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,684,48,18]}
+{"kind":"shape","id":"sh/329szqp0","slide":6,"bbox":[102,300,42,42]}
+{"kind":"textbox","id":"sh/4ry9grq1","slide":6,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[102,310,42,18]}
+{"kind":"textbox","id":"sh/5s7qpw7m","slide":6,"text":"Detect","textPreview":"Detect","textChars":6,"textLines":1,"bbox":[67,354,112,34]}
+{"kind":"shape","id":"sh/pk3yx0vy","slide":6,"bbox":[144,321,138,2]}
+{"kind":"shape","id":"sh/4juhovud","slide":6,"bbox":[282,300,42,42]}
+{"kind":"textbox","id":"sh/3ilgvqds","slide":6,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[282,310,42,18]}
+{"kind":"textbox","id":"sh/2hczmlc7","slide":6,"text":"Investigate","textPreview":"Investigate","textChars":11,"textLines":1,"bbox":[247,354,112,34]}
+{"kind":"shape","id":"sh/doni10vu","slide":6,"bbox":[324,321,138,2]}
+{"kind":"shape","id":"sh/cnehsfu9","slide":6,"bbox":[462,300,42,42]}
+{"kind":"textbox","id":"sh/rm50zad4","slide":6,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[462,310,42,18]}
+{"kind":"textbox","id":"sh/qlczq5cj","slide":6,"text":"Explain","textPreview":"Explain","textChars":7,"textLines":1,"bbox":[427,354,112,34]}
+{"kind":"shape","id":"sh/1cni5kv6","slide":6,"bbox":[504,321,138,2]}
+{"kind":"shape","id":"sh/0behwful","slide":6,"bbox":[642,300,42,42]}
+{"kind":"textbox","id":"sh/k76ton6t","slide":6,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[642,310,42,18]}
+{"kind":"textbox","id":"sh/58fahs7e","slide":6,"text":"Gate","textPreview":"Gate","textChars":4,"textLines":1,"bbox":[607,354,112,34]}
+{"kind":"shape","id":"sh/i5obmdo3","slide":6,"bbox":[684,321,138,2]}
+{"kind":"shape","id":"sh/j6xsfip8","slide":6,"bbox":[822,300,42,42]}
+{"kind":"textbox","id":"sh/svqtsn65","slide":6,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[822,310,42,18]}
+{"kind":"textbox","id":"sh/twzals7q","slide":6,"text":"Authorize","textPreview":"Authorize","textChars":9,"textLines":1,"bbox":[787,354,112,34]}
+{"kind":"shape","id":"sh/6tobqxoz","slide":6,"bbox":[864,321,138,2]}
+{"kind":"shape","id":"sh/7uhsj2pk","slide":6,"bbox":[1002,300,42,42]}
+{"kind":"textbox","id":"sh/ozm9g36l","slide":6,"text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[1002,310,42,18]}
+{"kind":"textbox","id":"sh/90va9876","slide":6,"text":"Verify","textPreview":"Verify","textChars":6,"textLines":1,"bbox":[967,354,112,34]}
+{"kind":"textbox","id":"sh/rulwv69o","slide":6,"text":"Alert","textPreview":"Alert","textChars":5,"textLines":1,"bbox":[100,450,120,20]}
+{"kind":"textbox","id":"sh/qtsvm18j","slide":6,"text":"Read-only evidence","textPreview":"Read-only evidence","textChars":18,"textLines":1,"bbox":[262,450,160,20]}
+{"kind":"textbox","id":"sh/dw3exgru","slide":6,"text":"Root cause + why","textPreview":"Root cause + why","textChars":16,"textLines":1,"bbox":[442,450,160,20]}
+{"kind":"textbox","id":"sh/cvudobq9","slide":6,"text":"Confidence + risk","textPreview":"Confidence + risk","textChars":17,"textLines":1,"bbox":[622,450,160,20]}
+{"kind":"textbox","id":"sh/3q1crm9s","slide":6,"text":"Approval / reject / manual","textPreview":"Approval / reject / manual","textChars":26,"textLines":1,"bbox":[802,450,170,20]}
+{"kind":"textbox","id":"sh/2psvi187","slide":6,"text":"Recovery + audit","textPreview":"Recovery + audit","textChars":16,"textLines":1,"bbox":[982,450,160,20]}
+{"kind":"notes","id":"nt/v0q4a9","slide":6,"text":"Say: This is the full response path. The agent never crosses the authorization boundary during investigation. The flow becomes actionable only after the policy gate and a human decision. Verification makes recovery an observed result rather than an assumption.\n\nVisual: Six-stage process diagram with numbered nodes.\n\nLayout: Horizontal timeline. Use this as the central visual explanation."}
+{"kind":"slide","id":"sl/u2tetl","slide":7,"title":"07","textShapes":15}
+{"kind":"shape","id":"sh/ex0jm5cf","slide":7,"bbox":[0,0,11,720]}
+{"kind":"textbox","id":"sh/10b2x0v6","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[72,42,80,24]}
+{"kind":"textbox","id":"sh/0zi1ovul","slide":7,"text":"Technology and architecture","textPreview":"Technology and architecture","textChars":27,"textLines":1,"bbox":[72,72,920,54]}
+{"kind":"textbox","id":"sh/ru90rqd4","slide":7,"text":"A modular React and FastAPI system connects an agent workflow to controlled remediation.","textPreview":"A modular React and FastAPI system connects an agent workflow to controlled remediation.","textChars":88,"textLines":1,"bbox":[72,132,930,30]}
+{"kind":"textbox","id":"sh/qt0jilcj","slide":7,"text":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textPreview":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textChars":41,"textLines":1,"bbox":[72,684,430,18]}
+{"kind":"textbox","id":"sh/dwrit0va","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,684,48,18]}
+{"kind":"shape","id":"sh/cvi1kvup","slide":7,"bbox":[170,190,760,70]}
+{"kind":"textbox","id":"sh/3qp0nqds","slide":7,"text":"Product interface","textPreview":"Product interface","textChars":17,"textLines":1,"bbox":[202,206,210,24]}
+{"kind":"textbox","id":"sh/25gjelc7","slide":7,"text":"React + Vite\nIncident console, guided demo, records","textPreview":"React + Vite | Incident console, guided demo, records","textChars":51,"textLines":2,"bbox":[438,205,440,38]}
+{"kind":"shape","id":"sh/wfep0rm5","slide":7,"bbox":[548,260,2,0]}
+{"kind":"shape","id":"sh/h0nqtwnq","slide":7,"bbox":[170,290,760,70]}
+{"kind":"textbox","id":"sh/udw7yh4f","slide":7,"text":"Application API","textPreview":"Application API","textChars":15,"textLines":1,"bbox":[202,306,210,24]}
+{"kind":"textbox","id":"sh/ve58rm5k","slide":7,"text":"FastAPI\nTyped remediation request and policy endpoints","textPreview":"FastAPI | Typed remediation request and policy endpoints","textChars":54,"textLines":2,"bbox":[438,305,440,38]}
+{"kind":"shape","id":"sh/8bupw7m9","slide":7,"bbox":[548,360,2,0]}
+{"kind":"shape","id":"sh/9c3qpcnu","slide":7,"bbox":[170,390,760,70]}
+{"kind":"textbox","id":"sh/m9c7ux43","slide":7,"text":"Investigation engine","textPreview":"Investigation engine","textChars":20,"textLines":1,"bbox":[202,406,210,24]}
+{"kind":"textbox","id":"sh/7al8n25o","slide":7,"text":"Gemini tool agent\nDeterministic fallback when provider is unavailable","textPreview":"Gemini tool agent | Deterministic fallback when provider is unavailable","textChars":69,"textLines":2,"bbox":[438,405,440,38]}
+{"kind":"shape","id":"sh/s7y98bmd","slide":7,"bbox":[548,460,2,0]}
+{"kind":"shape","id":"sh/t87q1gny","slide":7,"bbox":[170,490,760,70]}
+{"kind":"textbox","id":"sh/1cjy5cbq","slide":7,"text":"Control & evidence","textPreview":"Control & evidence","textChars":18,"textLines":1,"bbox":[202,506,210,24]}
+{"kind":"textbox","id":"sh/gbahw7al","slide":7,"text":"Read-only tools, risk engine, verifier, SQLite incident ledger","textPreview":"Read-only tools, risk engine, verifier, SQLite incident ledger","textChars":62,"textLines":1,"bbox":[438,505,440,38]}
+{"kind":"textbox","id":"sh/fa1g32t0","slide":7,"text":"Safety boundary","textPreview":"Safety boundary","textChars":15,"textLines":1,"bbox":[990,288,160,22]}
+{"kind":"shape","id":"sh/e9szuxsf","slide":7,"bbox":[980,324,190,112]}
+{"kind":"textbox","id":"sh/tojy1sbu","slide":7,"text":"AI never executes\nproduction change","textPreview":"AI never executes | production change","textChars":35,"textLines":2,"bbox":[1000,352,150,50]}
+{"kind":"notes","id":"nt/u2tetl","slide":7,"text":"Say: The architecture stays modular. React presents the product. FastAPI exposes the workflow. The agent uses read-only tools, with a deterministic fallback for demo resilience. The risk engine, verifier and SQLite ledger provide the controlled system of record.\n\nVisual: Four-layer editable architecture plus a visible safety boundary.\n\nLayout: Vertical stack on the left and safety statement on the right."}
+{"kind":"slide","id":"sl/0bjcjr","slide":8,"title":"08","textShapes":10}
+{"kind":"shape","id":"sh/5wvyl8jm","slide":8,"bbox":[0,0,11,720]}
+{"kind":"textbox","id":"sh/itkfadkb","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[72,42,80,24]}
+{"kind":"textbox","id":"sh/jutgji1w","slide":8,"text":"The safety boundary is the USP","textPreview":"The safety boundary is the USP","textChars":30,"textLines":1,"bbox":[72,72,920,54]}
+{"kind":"textbox","id":"sh/sjmxgn2d","slide":8,"text":"The project treats AI as an investigator within an explicit control system.","textPreview":"The project treats AI as an investigator within an explicit control system.","textChars":75,"textLines":1,"bbox":[72,132,930,30]}
+{"kind":"textbox","id":"sh/dkvypsjy","slide":8,"text":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textPreview":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textChars":41,"textLines":1,"bbox":[72,684,430,18]}
+{"kind":"textbox","id":"sh/6x4fedk7","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,684,48,18]}
+{"kind":"textbox","id":"sh/ridgni1s","slide":8,"text":"AI authority","textPreview":"AI authority","textChars":12,"textLines":1,"bbox":[145,204,340,32]}
+{"kind":"textbox","id":"sh/8nix4j29","slide":8,"text":"System authority","textPreview":"System authority","textChars":16,"textLines":1,"bbox":[785,204,340,32]}
+{"kind":"shape","id":"sh/9oredoje","slide":8,"bbox":[130,255,380,242]}
+{"kind":"textbox","id":"sh/p0zid8fe","slide":8,"text":"Read evidence\nCorrelate signals\nExplain root cause\nRecommend action","textPreview":"Read evidence | Correlate signals | Explain root cause | Recommend action","textChars":67,"textLines":4,"bbox":[172,304,296,132]}
+{"kind":"shape","id":"sh/4zqhk3et","slide":8,"bbox":[770,255,380,242]}
+{"kind":"textbox","id":"sh/3yhgbyx8","slide":8,"text":"Apply confidence policy\nClassify risk\nRequire role-based approval\nVerify recovery\nAppend audit event","textPreview":"Apply confidence policy | Classify risk | Require role-based approval | Verify recovery | Append audit event","textChars":100,"textLines":5,"bbox":[812,288,296,170]}
+{"kind":"shape","id":"sh/2dozitgn","slide":8,"bbox":[510,375,260,3]}
+{"kind":"shape","id":"sh/d4zih8fa","slide":8,"bbox":[568,340,144,68]}
+{"kind":"textbox","id":"sh/c3qho3ep","slide":8,"text":"POLICY\nGATE","textPreview":"POLICY | GATE","textChars":11,"textLines":2,"bbox":[580,354,120,34]}
+{"kind":"notes","id":"nt/0bjcjr","slide":8,"text":"Say: Our core innovation is governance around the model. AI can inspect and recommend, but the system owns the confidence threshold, risk classification, role check, idempotent execution and recovery verification. That makes the demo more credible than an AI chatbot that can simply call an action.\n\nVisual: Two authority zones separated by a policy gate.\n\nLayout: Symmetrical composition. Let the policy gate carry the message."}
+{"kind":"slide","id":"sl/s3gr94","slide":9,"title":"09","textShapes":15}
+{"kind":"shape","id":"sh/kbal47ml","slide":9,"bbox":[0,0,11,720]}
+{"kind":"textbox","id":"sh/za1kb2l0","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[72,42,80,24]}
+{"kind":"textbox","id":"sh/y9s32x4f","slide":9,"text":"The live demo experience","textPreview":"The live demo experience","textChars":24,"textLines":1,"bbox":[72,72,920,54]}
+{"kind":"textbox","id":"sh/9gj2hc32","slide":9,"text":"The strongest visual moment is a guided incident that makes the safety story visible.","textPreview":"The strongest visual moment is a guided incident that makes the safety story visible.","textChars":85,"textLines":1,"bbox":[72,132,930,30]}
+{"kind":"textbox","id":"sh/8fal8rmh","slide":9,"text":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textPreview":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textChars":41,"textLines":1,"bbox":[72,684,430,18]}
+{"kind":"textbox","id":"sh/7e1kfmlc","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1160,684,48,18]}
+{"kind":"textbox","id":"sh/pkz25s3y","slide":9,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[760,196,42,20]}
+{"kind":"textbox","id":"sh/ojq1wnmd","slide":9,"text":"Launch the 90-sec demo","textPreview":"Launch the 90-sec demo","textChars":22,"textLines":1,"bbox":[816,194,350,28]}
+{"kind":"shape","id":"sh/uxo3qxw7","slide":9,"bbox":[816,234,300,1]}
+{"kind":"textbox","id":"sh/vyx4z2xc","slide":9,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[760,268,42,20]}
+{"kind":"textbox","id":"sh/gz6lsnex","slide":9,"text":"Review evidence and root cause","textPreview":"Review evidence and root cause","textChars":30,"textLines":1,"bbox":[816,266,350,28]}
+{"kind":"shape","id":"sh/h0fm1sfi","slide":9,"bbox":[816,306,300,1]}
+{"kind":"textbox","id":"sh/i1o3uxw3","slide":9,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[760,340,42,20]}
+{"kind":"textbox","id":"sh/32x432xo","slide":9,"text":"See confidence, risk, and runbook","textPreview":"See confidence, risk, and runbook","textChars":33,"textLines":1,"bbox":[816,338,350,28]}
+{"kind":"shape","id":"sh/4n6lw7e9","slide":9,"bbox":[816,378,300,1]}
+{"kind":"textbox","id":"sh/5ofm5cfu","slide":9,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[760,412,42,20]}
+{"kind":"textbox","id":"sh/qp83yhwz","slide":9,"text":"Approve, reject, or remediate manually","textPreview":"Approve, reject, or remediate manually","textChars":38,"textLines":1,"bbox":[816,410,350,28]}
+{"kind":"shape","id":"sh/rqh47mxk","slide":9,"bbox":[816,450,300,1]}
+{"kind":"textbox","id":"sh/nuhkfmds","slide":9,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[760,484,42,20]}
+{"kind":"textbox","id":"sh/mt83mhc7","slide":9,"text":"Verify recovery and review the ledger","textPreview":"Verify recovery and review the ledger","textChars":37,"textLines":1,"bbox":[816,482,350,28]}
+{"kind":"shape","id":"sh/9wj2hwvy","slide":9,"bbox":[816,522,300,1]}
+{"kind":"image","id":"im/judkzyxs","slide":9,"name":"","geometry":"roundRect","alt":"DevOps Copilot home page","bbox":[80,190,610,390]}
+{"kind":"notes","id":"nt/s3gr94","slide":9,"text":"Say: For the live demo, I will launch the database regression scenario. The audience immediately sees a guided path. We investigate, explain the evidence, show the confidence and risk gate, make a human choice, and end with verified recovery and an audit record.\n\nVisual: Actual product screenshot plus five demo beats.\n\nLayout: Screenshot occupies the left side. The exact talk track sits on the right."}
+{"kind":"slide","id":"sl/3i0qn3","slide":10,"title":"10","textShapes":14}
+{"kind":"shape","id":"sh/u1cje9wr","slide":10,"bbox":[0,0,11,720]}
+{"kind":"textbox","id":"sh/h43i9ovi","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[72,42,80,24]}
+{"kind":"textbox","id":"sh/w3u1gjex","slide":10,"text":"Impact and scalability","textPreview":"Impact and scalability","textChars":22,"textLines":1,"bbox":[72,72,920,54]}
+{"kind":"textbox","id":"sh/7y103edg","slide":10,"text":"The product targets teams that need faster understanding without surrendering production control.","textPreview":"The product targets teams that need faster understanding without surrendering production control.","textChars":97,"textLines":1,"bbox":[72,132,930,30]}
+{"kind":"textbox","id":"sh/mxsja9wv","slide":10,"text":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textPreview":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textChars":41,"textLines":1,"bbox":[72,684,430,18]}
+{"kind":"textbox","id":"sh/903i5ovm","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1160,684,48,18]}
+{"kind":"textbox","id":"sh/8zu1cje1","slide":10,"text":"On-call SRE","textPreview":"On-call SRE","textChars":11,"textLines":1,"bbox":[118,205,230,26]}
+{"kind":"textbox","id":"sh/ru5kfydk","slide":10,"text":"One evidence trail during a high-pressure incident","textPreview":"One evidence trail during a high-pressure incident","textChars":50,"textLines":1,"bbox":[376,207,420,26]}
+{"kind":"shape","id":"sh/6twjmtwz","slide":10,"bbox":[118,255,680,1]}
+{"kind":"textbox","id":"sh/szutwfmp","slide":10,"text":"Incident Commander","textPreview":"Incident Commander","textChars":18,"textLines":1,"bbox":[118,297,230,26]}
+{"kind":"textbox","id":"sh/t03upknu","slide":10,"text":"A visible approval boundary and ownership record","textPreview":"A visible approval boundary and ownership record","textChars":48,"textLines":1,"bbox":[376,299,420,26]}
+{"kind":"shape","id":"sh/6xcbu54j","slide":10,"bbox":[118,347,680,1]}
+{"kind":"textbox","id":"sh/7ylcna54","slide":10,"text":"Platform Team","textPreview":"Platform Team","textChars":13,"textLines":1,"bbox":[118,389,230,26]}
+{"kind":"textbox","id":"sh/kvatsvmd","slide":10,"text":"A searchable ledger for review and learning","textPreview":"A searchable ledger for review and learning","textChars":43,"textLines":1,"bbox":[376,391,420,26]}
+{"kind":"shape","id":"sh/5w3al0ny","slide":10,"bbox":[118,439,680,1]}
+{"kind":"textbox","id":"sh/y9sbq547","slide":10,"text":"Scale path","textPreview":"Scale path","textChars":10,"textLines":1,"bbox":[872,206,170,28]}
+{"kind":"textbox","id":"sh/ja1sjq5s","slide":10,"text":"Replace simulation adapters with\nmonitoring, deployment, and\nnotification integrations.\n\nPersist incident records in\nproduction-grade shared storage.","textPreview":"Replace simulation adapters with | monitoring, deployment, and | notification integrations. |  | Persist incident records in | production...","textChars":149,"textLines":6,"bbox":[872,258,270,160]}
+{"kind":"textbox","id":"sh/w7atovmh","slide":10,"text":"Expected operational value must be validated with a pilot. The prototype demonstrates the workflow and its safety controls, not performance claims.","textPreview":"Expected operational value must be validated with a pilot. The prototype demonstrates the workflow and its safety controls, not performan...","textChars":147,"textLines":1,"bbox":[120,552,980,44]}
+{"kind":"notes","id":"nt/3i0qn3","slide":10,"text":"Say: The immediate users are the people running incidents. The product gives them a shared evidence trail, a concrete approval record and a durable ledger. For scale, the simulation adapters map directly to real monitoring, deployment and notification systems. Any measurable improvement needs a real pilot, so we do not claim numbers here.\n\nVisual: Target user roles and a practical scale path. Include visible disclosure on unvalidated impact.\n\nLayout: One narrative: who benefits, then how it scales."}
+{"kind":"slide","id":"sl/k8eob4","slide":11,"title":"11","textShapes":12}
+{"kind":"shape","id":"sh/1cbidsry","slide":11,"bbox":[0,0,11,720]}
+{"kind":"textbox","id":"sh/e9kz2d8n","slide":11,"text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[72,42,80,24]}
+{"kind":"textbox","id":"sh/zat0bi98","slide":11,"text":"Roadmap to production","textPreview":"Roadmap to production","textChars":21,"textLines":1,"bbox":[72,72,920,54]}
+{"kind":"textbox","id":"sh/c7ih03qh","slide":11,"text":"The demo architecture points to clear next steps without overstating current integrations.","textPreview":"The demo architecture points to clear next steps without overstating current integrations.","textChars":90,"textLines":1,"bbox":[72,132,930,30]}
+{"kind":"textbox","id":"sh/d8bi98r2","slide":11,"text":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textPreview":"DEVOPS COPILOT  |  HACKATHON PRESENTATION","textChars":41,"textLines":1,"bbox":[72,684,430,18]}
+{"kind":"textbox","id":"sh/ql0zyd8b","slide":11,"text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1160,684,48,18]}
+{"kind":"textbox","id":"sh/r6907i9w","slide":11,"text":"Next","textPreview":"Next","textChars":4,"textLines":1,"bbox":[100,222,200,30]}
+{"kind":"shape","id":"sh/w3m1c7ql","slide":11,"bbox":[100,270,275,3]}
+{"kind":"textbox","id":"sh/x4vilcr6","slide":11,"text":"Connect live observability and deployment systems\nAdd real Slack, Teams, PagerDuty, and email adapters","textPreview":"Connect live observability and deployment systems | Add real Slack, Teams, PagerDuty, and email adapters","textChars":102,"textLines":2,"bbox":[100,306,278,95]}
+{"kind":"textbox","id":"sh/pcz6hcfm","slide":11,"text":"Then","textPreview":"Then","textChars":4,"textLines":1,"bbox":[470,222,200,30]}
+{"kind":"shape","id":"sh/4rqp8re1","slide":11,"bbox":[470,270,275,3]}
+{"kind":"textbox","id":"sh/3qhofmxg","slide":11,"text":"Deploy shared database storage\nAdd sign-in, RBAC, and organization-specific runbooks","textPreview":"Deploy shared database storage | Add sign-in, RBAC, and organization-specific runbooks","textChars":84,"textLines":2,"bbox":[470,306,278,95]}
+{"kind":"textbox","id":"sh/2p876hwb","slide":11,"text":"Later","textPreview":"Later","textChars":5,"textLines":1,"bbox":[840,222,200,30]}
+{"kind":"shape","id":"sh/hof6dcfq","slide":11,"bbox":[840,270,275,3]}
+{"kind":"textbox","id":"sh/gn6p47e5","slide":11,"text":"Model service dependencies from live topology\nAdd post-incident learning and evaluation workflows","textPreview":"Model service dependencies from live topology | Add post-incident learning and evaluation workflows","textChars":97,"textLines":2,"bbox":[840,306,278,95]}
+{"kind":"textbox","id":"sh/fmxob2xk","slide":11,"text":"Current prototype: simulated infrastructure, simulated notification adapters, durable local ledger, and external-integration-ready interfaces.","textPreview":"Current prototype: simulated infrastructure, simulated notification adapters, durable local ledger, and external-integration-ready interf...","textChars":142,"textLines":1,"bbox":[148,525,980,36]}
+{"kind":"notes","id":"nt/k8eob4","slide":11,"text":"Say: The roadmap is deliberately realistic. First we connect the adapters to live signals and notification systems. Next we add identity, shared storage and organization-specific controls. Later we can learn from post-incident records and map dependencies from real topology data.\n\nVisual: Three-horizon roadmap with one clear statement of current prototype scope.\n\nLayout: Use simple vertical columns, no speculative metrics."}
+{"kind":"slide","id":"sl/ucqk67","slide":12,"title":"DEVOPS COPILOT","textShapes":7}
+{"kind":"shape","id":"sh/jaxcnix4","slide":12,"bbox":[0,0,11,720]}
+{"kind":"textbox","id":"sh/kb6dw3e9","slide":12,"text":"DEVOPS COPILOT","textPreview":"DEVOPS COPILOT","textChars":14,"textLines":1,"bbox":[92,100,500,28]}
+{"kind":"textbox","id":"sh/5cfup8fu","slide":12,"text":"Fast investigation.\nControlled action.\nVerified recovery.","textPreview":"Fast investigation. | Controlled action. | Verified recovery.","textChars":57,"textLines":3,"bbox":[92,160,760,180]}
+{"kind":"textbox","id":"sh/al4bqtw7","slide":12,"text":"The takeaway: use AI to accelerate understanding while deterministic policy and human approval protect production change.","textPreview":"The takeaway: use AI to accelerate understanding while deterministic policy and human approval protect production change.","textChars":121,"textLines":1,"bbox":[96,390,720,58]}
+{"kind":"shape","id":"sh/bmdcjyxs","slide":12,"bbox":[900,166,220,250]}
+{"kind":"textbox","id":"sh/w7mts3ed","slide":12,"text":"READ\nEVIDENCE","textPreview":"READ | EVIDENCE","textChars":13,"textLines":2,"bbox":[936,210,148,44]}
+{"kind":"textbox","id":"sh/x8vul8fy","slide":12,"text":"GATE\nRISK","textPreview":"GATE | RISK","textChars":9,"textLines":2,"bbox":[936,285,148,44]}
+{"kind":"textbox","id":"sh/mhkbmtwb","slide":12,"text":"PROVE\nRECOVERY","textPreview":"PROVE | RECOVERY","textChars":14,"textLines":2,"bbox":[936,360,148,44]}
+{"kind":"textbox","id":"sh/nidcfyxw","slide":12,"text":"Thank you","textPreview":"Thank you","textChars":9,"textLines":1,"bbox":[96,604,260,30]}
+{"kind":"notes","id":"nt/ucqk67","slide":12,"text":"Say: DevOps Copilot turns an incident into a controlled, explainable response loop. It keeps people in control of production changes while giving them the speed and clarity of AI-assisted investigation. Thank you.\n\nVisual: Closing statement with a three-word safety motif.\n\nLayout: Minimal final slide. Pause after the takeaway before inviting questions."}

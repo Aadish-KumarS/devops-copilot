@@ -6,7 +6,9 @@ import {
   resetIncident,
   getCurrentIncident,
   getScenarios,
-  selectScenario
+  selectScenario,
+  assignIncident,
+  recordIncidentDecision
 } from "./api";
 import "./App.css";
 import Header from "./components/Header";
@@ -19,6 +21,15 @@ import RecoveryMetrics from "./components/RecoveryMetrics";
 import AIAnalysis from "./components/AIAnalysis";
 import IncidentReport from "./components/IncidentReport";
 import AgentActivity from "./components/AgentActivity"
+import HomePage from "./components/HomePage";
+import AboutPage from "./components/AboutPage";
+import DemoGuide from "./components/DemoGuide";
+import TrustLedger from "./components/TrustLedger";
+import ControlPlane from "./components/ControlPlane";
+import RunbookPanel from "./components/RunbookPanel";
+import ServiceImpact from "./components/ServiceImpact";
+import OperationsPanel from "./components/OperationsPanel";
+import RecordsPage from "./components/RecordsPage";
 
 function App() {
   const [monitoring, setMonitoring] = useState(null);
@@ -28,8 +39,11 @@ function App() {
   const [error, setError] = useState(null);
   const [scenarios, setScenarios] = useState([]);
   const [activeScenario, setActiveScenario] = useState("");
+  const [activePage, setActivePage] = useState("home");
 
   useEffect(() => {
+    if (activePage !== "dashboard") return;
+
     getScenarios()
       .then((data) => {
         setScenarios(data.scenarios);
@@ -38,7 +52,7 @@ function App() {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [activePage]);
 
   const handleScenarioChange = async (event) => {
     try {
@@ -50,6 +64,8 @@ function App() {
   };
 
   useEffect(() => {
+    if (activePage !== "dashboard") return;
+
     getCurrentIncident()
       .then((data) => {
         setMonitoring(data);
@@ -60,7 +76,7 @@ function App() {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [activePage]);
 
   const handleInvestigate = async () => {
     try {
@@ -77,13 +93,15 @@ function App() {
     }
   };
 
-  const handleApproveRollback = async () => {
+  const handleApproveRollback = async (approval) => {
     try {
       const remediation = await remediateIncident(
         incident.diagnosis,
         true,
         activeScenario,
-        incident
+        incident,
+        approval,
+        crypto.randomUUID()
       );
 
       const verification = await verifyIncident(
@@ -91,7 +109,8 @@ function App() {
         activeScenario,
         {
           ...incident,
-          remediation
+          remediation,
+          approval: remediation.approval || approval
         }
       );
 
@@ -99,8 +118,28 @@ function App() {
         ...current,
         remediation: remediation.remediation || remediation,
         verification: verification,
+        approval: remediation.approval || approval,
         audit_trail: verification.audit_trail || []
       }));
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  const handleAssignOwner = async (owner) => {
+    try {
+      const result = await assignIncident(incident.incident.id, owner);
+      setIncident((current) => ({ ...current, governance: { ...current.governance, incident_owner: result.incident.owner } }));
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  const handleDecision = async (decision) => {
+    try {
+      const reason = decision === "manual" ? "Operator selected the documented runbook path." : "Operator rejected the recommendation after review.";
+      const result = await recordIncidentDecision(incident.incident.id, decision, reason);
+      setIncident((current) => ({ ...current, decision, audit_trail: result.audit_trail || current.audit_trail }));
     } catch (err) {
       setError(err.message);
     }
@@ -124,6 +163,52 @@ function App() {
     }
   };
 
+  const openConsole = () => setActivePage("dashboard");
+
+  const handleGuidedDemo = async () => {
+    try {
+      setActivePage("dashboard");
+      setInvestigating(true);
+      setError(null);
+      const scenario = "database_failure";
+      await selectScenario(scenario);
+      setActiveScenario(scenario);
+      const data = await investigateIncident(scenario);
+      setIncident(data);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setInvestigating(false);
+    }
+  };
+
+  if (activePage === "home") {
+    return (
+      <div className="app">
+        <Header onReset={handleReset} activePage={activePage} onNavigate={setActivePage} />
+        <HomePage onOpenConsole={openConsole} onStartDemo={handleGuidedDemo} />
+      </div>
+    );
+  }
+
+  if (activePage === "about") {
+    return (
+      <div className="app">
+        <Header onReset={handleReset} activePage={activePage} onNavigate={setActivePage} />
+        <AboutPage onOpenConsole={openConsole} />
+      </div>
+    );
+  }
+
+  if (activePage === "records") {
+    return (
+      <div className="app">
+        <Header onReset={handleReset} activePage={activePage} onNavigate={setActivePage} />
+        <RecordsPage />
+      </div>
+    );
+  }
+
   if (loading) {
     return <div className="loading">Loading system status...</div>;
   }
@@ -134,12 +219,19 @@ function App() {
 
   if (investigating) {
     return (
-      <div className="loading">
-        <h2>Investigating Incident...</h2>
-        <p>
-          Collecting service health, logs, deployments,
-          configuration and incident history.
-        </p>
+      <div className="investigation-loading">
+        <div className="loading-shell">
+          <span className="eyebrow">AUTONOMOUS INVESTIGATION IN PROGRESS</span>
+          <h2>Building an evidence-backed recovery plan.</h2>
+          <p>Copilot is reading signals only. It cannot change production during this stage.</p>
+          <div className="loading-checks">
+            <span><i>✓</i> Service health</span>
+            <span><i>✓</i> Application logs</span>
+            <span><i>✓</i> Deployment history</span>
+            <span><i>✓</i> Configuration changes</span>
+          </div>
+          <div className="loading-line"><span></span></div>
+        </div>
       </div>
     );
   }
@@ -196,9 +288,10 @@ function App() {
 
     return (
       <div className="app">
-        <Header onReset={handleReset} />
+        <Header onReset={handleReset} activePage={activePage} onNavigate={setActivePage} />
 
         <main className="dashboard">
+          <DemoGuide activeScenario={activeScenario} onStartDemo={handleGuidedDemo} />
           <section className="incident-header">
             <div>
               <span className="eyebrow">SYSTEM MONITORING</span>
@@ -263,7 +356,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header onReset={handleReset} />
+      <Header onReset={handleReset} activePage={activePage} onNavigate={setActivePage} />
 
       <div className="scenario-selector">
         <label>INCIDENT SCENARIO</label>
@@ -292,14 +385,26 @@ function App() {
 
         <AIAnalysis data={incident} />
 
+        <TrustLedger data={incident} />
+
+        <ControlPlane data={incident} onAssign={handleAssignOwner} />
+
+        <section className="content-grid governance-grid">
+          <RunbookPanel data={incident} />
+          <ServiceImpact data={incident} />
+        </section>
+
         <ApprovalPanel
           data={incident}
           onApprove={handleApproveRollback}
+          onDecision={handleDecision}
         />
 
         <RecoveryStatus data={incident} />
 
         <RecoveryMetrics data={incident} />
+
+        <OperationsPanel data={incident} />
 
         <IncidentReport data={incident} />
       </main>

@@ -2,6 +2,18 @@
 
 An AI-powered incident response system that investigates production failures, identifies likely root causes, recommends remediation, safely handles high-risk actions through human approval, verifies recovery, and generates an auditable incident report.
 
+## ⚡ 90-Second Judge Demo
+
+Open the product and select **Launch the 90-sec demo**. The guided path uses a database connection-pool regression to demonstrate the complete safety loop:
+
+1. **Detect:** Route Planner shows critical error rate, latency, and 5xx degradation.
+2. **Investigate:** Copilot correlates six read-only sources—health, logs, deployments, config, history, and system state.
+3. **Explain:** The UI exposes the root cause, confidence, evidence trail, and the decision ledger.
+4. **Control:** The proposed rollback is classified as high risk and explicitly held for human approval.
+5. **Recover:** After approval, the demo verifies service recovery and generates an audit-ready incident report.
+
+> **The pitch:** AI accelerates investigation; deterministic policy controls risk; humans authorize production change.
+
 ## 🚨 Problem
 
 Production incidents require engineers to quickly investigate logs, service health, deployments, configuration changes, and previous incidents.

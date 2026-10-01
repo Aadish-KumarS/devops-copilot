@@ -22,7 +22,9 @@ export async function remediateIncident(
   diagnosis,
   approved,
   scenario,
-  incident
+  incident,
+  approval,
+  idempotencyKey
 ) {
   const response = await fetch(`${API_URL}/api/incidents/remediate`, {
     method: "POST",
@@ -33,7 +35,9 @@ export async function remediateIncident(
       diagnosis,
       approved,
       scenario,
-      incident
+      incident,
+      approval,
+      idempotency_key: idempotencyKey
     })
   });
 
@@ -111,5 +115,23 @@ export async function selectScenario(scenarioName) {
     throw new Error("Failed to select scenario");
   }
 
+  return response.json();
+}
+
+export async function assignIncident(incidentId, owner) {
+  const response = await fetch(`${API_URL}/api/incidents/${incidentId}/assign`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ owner }) });
+  if (!response.ok) throw new Error("Failed to assign incident owner");
+  return response.json();
+}
+
+export async function recordIncidentDecision(incidentId, decision, reason) {
+  const response = await fetch(`${API_URL}/api/incidents/${incidentId}/decision`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ decision, reason }) });
+  if (!response.ok) throw new Error("Failed to record incident decision");
+  return response.json();
+}
+
+export async function getIncidents(search = "") {
+  const response = await fetch(`${API_URL}/api/incidents?search=${encodeURIComponent(search)}`);
+  if (!response.ok) throw new Error("Failed to load incident records");
   return response.json();
 }
