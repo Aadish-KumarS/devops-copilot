@@ -30,6 +30,10 @@ import RunbookPanel from "./components/RunbookPanel";
 import ServiceImpact from "./components/ServiceImpact";
 import OperationsPanel from "./components/OperationsPanel";
 import RecordsPage from "./components/RecordsPage";
+import ResponseCockpit from "./components/ResponseCockpit";
+import EvidenceMap from "./components/EvidenceMap";
+import ExportBrief from "./components/ExportBrief";
+import InvestigationLoading from "./components/InvestigationLoading";
 
 function App() {
   const [monitoring, setMonitoring] = useState(null);
@@ -171,6 +175,7 @@ function App() {
       setInvestigating(true);
       setError(null);
       const scenario = "database_failure";
+      await resetIncident();
       await selectScenario(scenario);
       setActiveScenario(scenario);
       const data = await investigateIncident(scenario);
@@ -218,22 +223,7 @@ function App() {
   }
 
   if (investigating) {
-    return (
-      <div className="investigation-loading">
-        <div className="loading-shell">
-          <span className="eyebrow">AUTONOMOUS INVESTIGATION IN PROGRESS</span>
-          <h2>Building an evidence-backed recovery plan.</h2>
-          <p>Copilot is reading signals only. It cannot change production during this stage.</p>
-          <div className="loading-checks">
-            <span><i>✓</i> Service health</span>
-            <span><i>✓</i> Application logs</span>
-            <span><i>✓</i> Deployment history</span>
-            <span><i>✓</i> Configuration changes</span>
-          </div>
-          <div className="loading-line"><span></span></div>
-        </div>
-      </div>
-    );
+    return <InvestigationLoading />;
   }
 
   const scenarioInfo = {
@@ -373,6 +363,10 @@ function App() {
       <main className="dashboard">
         <ServiceStatus data={incident} />
 
+        <ResponseCockpit data={incident} />
+
+        <EvidenceMap data={incident} />
+
         <AgentActivity
           trace={incident.investigation_trace}
           data={incident}
@@ -405,6 +399,8 @@ function App() {
         <RecoveryMetrics data={incident} />
 
         <OperationsPanel data={incident} />
+
+        <ExportBrief data={incident} />
 
         <IncidentReport data={incident} />
       </main>

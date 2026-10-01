@@ -6,20 +6,16 @@ function CountUp({ value, suffix = "" }) {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    if (
-      Number.isNaN(target) ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      setCurrent(target);
+    if (Number.isNaN(target)) {
       return undefined;
     }
 
-    const duration = 900;
+    const duration = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 900;
     const start = performance.now();
     let frame;
 
     const tick = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
+      const progress = duration === 0 ? 1 : Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       setCurrent(target * eased);
 

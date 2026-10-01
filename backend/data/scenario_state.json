@@ -8,12 +8,12 @@
     "recovered": false
   },
   "database_failure": {
-    "status": "unhealthy",
-    "error_rate": 61.8,
-    "latency_ms": 6800,
-    "http_5xx_rate": 54.2,
-    "arrival_data_freshness_seconds": 510,
-    "recovered": false
+    "status": "healthy",
+    "error_rate": 1.4,
+    "latency_ms": 240,
+    "http_5xx_rate": 1.1,
+    "arrival_data_freshness_seconds": 9,
+    "recovered": true
   },
   "external_api_failure": {
     "status": "degraded",

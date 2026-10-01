@@ -67,6 +67,28 @@ function HomePage({ onOpenConsole, onStartDemo }) {
           <span>Signals</span><i></i><span>AI investigation</span><i></i><span className="highlight">Risk policy</span><i></i><span className="highlight mint">Human approval</span><i></i><span>Verified recovery</span>
         </div>
       </section>
+
+      <section className="operating-model" aria-labelledby="operating-model-title">
+        <div className="operating-model-intro">
+          <span className="eyebrow">DESIGNED FOR THE MOMENT THAT MATTERS</span>
+          <h2 id="operating-model-title">A better incident response is not just faster. It is safer under pressure.</h2>
+          <p>
+            Copilot separates observation, reasoning, policy, and production action so every decision is understandable at a glance.
+          </p>
+        </div>
+        <div className="operating-model-grid">
+          <article><span>01</span><h3>Observe</h3><p>Read signals across health, logs, deployments, configuration, history, and system state.</p><small>NO PRODUCTION WRITE</small></article>
+          <article><span>02</span><h3>Explain</h3><p>Connect the evidence into a root-cause narrative with a visible confidence level.</p><small>MULTI-SOURCE REASONING</small></article>
+          <article><span>03</span><h3>Govern</h3><p>Put high-impact recommendations behind a deterministic confidence and risk gate.</p><small>POLICY BEFORE ACTION</small></article>
+          <article><span>04</span><h3>Recover</h3><p>Require accountable approval, verify the result, and retain the decision record.</p><small>HUMAN-CONTROLLED</small></article>
+        </div>
+      </section>
+
+      <section className="prototype-note" aria-label="Prototype scope">
+        <div className="prototype-mark">◎</div>
+        <div><span className="eyebrow">PROTOTYPE WITH A PRODUCTION MINDSET</span><h3>Simulated incident data. Real safety boundaries.</h3><p>This hackathon build uses controlled scenarios so the full response loop can be demonstrated safely. Its adapter boundaries are designed for live observability, incident, and notification integrations.</p></div>
+        <button className="secondary-button" type="button" onClick={onOpenConsole}>Inspect the console</button>
+      </section>
     </main>
   );
 }

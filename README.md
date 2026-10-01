@@ -1,6 +1,19 @@
 # DevOps Copilot — Autonomous Incident Response
 
-An AI-powered incident response system that investigates production failures, identifies likely root causes, recommends remediation, safely handles high-risk actions through human approval, verifies recovery, and generates an auditable incident report.
+An evidence-first incident-response copilot that turns fragmented production signals into an explainable, policy-gated recovery plan—while keeping the final production decision with an accountable human.
+
+> **One-line pitch:** DevOps Copilot investigates; deterministic policy decides what is safe; people authorize production change.
+
+## Why it stands out
+
+The product is intentionally designed around the trust gap in autonomous operations:
+
+- **Observable:** a six-source evidence-to-decision map makes the basis for every recommendation visible.
+- **Governed:** high-impact changes pass an explicit confidence and risk gate before an operator can approve them.
+- **Accountable:** ownership, approval history, overrides, notifications, remediation, verification, and audit events live in a durable incident ledger.
+- **Demo-ready:** the guided scenario resets the environment and tells a complete, repeatable story from critical alert to verified recovery.
+
+The prototype uses controlled incident scenarios so the complete safety loop can be demonstrated without changing real infrastructure. The adapter boundaries are structured for live observability, incident-management, and notification integrations.
 
 ## ⚡ 90-Second Judge Demo
 
@@ -9,10 +22,17 @@ Open the product and select **Launch the 90-sec demo**. The guided path uses a d
 1. **Detect:** Route Planner shows critical error rate, latency, and 5xx degradation.
 2. **Investigate:** Copilot correlates six read-only sources—health, logs, deployments, config, history, and system state.
 3. **Explain:** The UI exposes the root cause, confidence, evidence trail, and the decision ledger.
-4. **Control:** The proposed rollback is classified as high risk and explicitly held for human approval.
-5. **Recover:** After approval, the demo verifies service recovery and generates an audit-ready incident report.
+4. **Govern:** The proposed rollback is classified as high risk and explicitly held for human approval.
+5. **Recover:** After approval, the demo verifies service recovery and generates an audit-ready incident report and handoff brief.
 
 > **The pitch:** AI accelerates investigation; deterministic policy controls risk; humans authorize production change.
+
+## Deploy safely
+
+- **Frontend (Vercel):** deploy the `frontend` directory and set `VITE_API_URL` to the public backend URL. See [`frontend/.env.example`](frontend/.env.example).
+- **Backend (Render):** the included [`render.yaml`](render.yaml) installs the API requirements, starts Uvicorn on Render's assigned port, and exposes a health check at `/`.
+- **CORS:** the API accepts local development origins and Vercel preview origins matching this project's deployment naming pattern. Add your exact custom-domain origin to `backend/main.py` if you introduce one.
+- **AI fallback:** a missing Gemini key does not break the judge demo; the API returns a deterministic, evidence-based fallback diagnosis. Add `GEMINI_API_KEY` to Render to enable the Gemini investigation path.
 
 ## 🚨 Problem
 

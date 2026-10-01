@@ -7,8 +7,8 @@ function RecordsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
     const timer = setTimeout(() => {
+      setLoading(true);
       getIncidents(search).then((data) => setRecords(data.incidents)).catch(() => setRecords([])).finally(() => setLoading(false));
     }, 200);
     return () => clearTimeout(timer);

@@ -106,8 +106,10 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://localhost:5174",
+        "http://localhost:5175",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:5174",
+        "http://127.0.0.1:5175",
         "https://devops-copilot-ivory.vercel.app",
         "https://devops-copilot-5vva7fj33-a-code1.vercel.app",
         "https://devops-copilot-96d7f6pno-a-code1.vercel.app",

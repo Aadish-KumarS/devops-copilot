@@ -9,9 +9,8 @@ from agent.tool_registry import execute_read_only_tool
 
 load_dotenv()
 
-client = genai.Client(
-    api_key=os.getenv("GEMINI_API_KEY")
-)
+_gemini_api_key = os.getenv("GEMINI_API_KEY")
+client = genai.Client(api_key=_gemini_api_key) if _gemini_api_key else None
 
 MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 
@@ -215,6 +214,8 @@ def select_next_tool(incident, evidence, trace):
 
 
 def investigate_incident(incident):
+    if client is None:
+        raise RuntimeError("GEMINI_API_KEY is not configured")
     evidence = []
     investigation_trace = []
 
